@@ -1,0 +1,13 @@
+{
+  "name": "demeter",
+  "version": "1.0.0",
+  "description": "Subir el proyecto con cada parte dividido en ramas.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
