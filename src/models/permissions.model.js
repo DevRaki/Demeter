@@ -1,18 +1,21 @@
-import {DataTypes} from 'sequelize';
+import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 import { role_permissions } from './role_permissions.model.js';
 
-export const permissions = sequelize.define('permisos', {
+export const permissions = sequelize.define('PERMISOS', {
     ID_PERMISO: {
-        type: DataTypes.BIGINT(11),
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     Nombre_Permiso: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        required: true,
+        trim: true
     },
     _Url: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        required: true
     }
 });
 

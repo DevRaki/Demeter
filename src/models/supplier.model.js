@@ -1,22 +1,28 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 
-export const user = sequelize.define('USUARIOS', {
-    ID_USUARIO: {
+export const supplier = sequelize.define('PROVEEDORES', {
+    ID_PROVEEDOR: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    Nombre_Usuario: {
+    Nombre: {
         type: DataTypes.STRING,
         required: true,
         trim: true
     },
-    Contrasena: {
-        type: DataTypes.STRING,
-        required: true
+    Telefono: {
+        type: DataTypes.INTEGER,
+        required: true,
+        trim: true
     },
     Email: {
+        type: DataTypes.STRING,
+        required: true,
+        trim: true
+    },
+    Ciudad: {
         type: DataTypes.STRING,
         required: true,
         trim: true

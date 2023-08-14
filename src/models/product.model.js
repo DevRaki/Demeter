@@ -1,24 +1,23 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 
-export const user = sequelize.define('USUARIOS', {
-    ID_USUARIO: {
+export const product = sequelize.define('PRODUCTOS', {
+    ID_PRODUCTO: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    Nombre_Usuario: {
+    Nombre_Producto: {
         type: DataTypes.STRING,
         required: true,
         trim: true
     },
-    Contrasena: {
-        type: DataTypes.STRING,
+    Precio: {
+        type: DataTypes.DECIMAL(10, 2),
         required: true
     },
-    Email: {
-        type: DataTypes.STRING,
-        required: true,
-        trim: true
+    Imagen: {
+        type: DataTypes.BLOB,
+        required: true
     }
 });
