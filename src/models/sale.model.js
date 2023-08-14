@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
+import { detail_sale } from './detail_sale.model.js'
 
 export const sale = sequelize.define('VENTAS', {
     ID_VENTA: {
@@ -35,3 +36,13 @@ export const sale = sequelize.define('VENTAS', {
     }
 
 });
+
+sale.hasMany(detail_sale, {
+    foreignKey: 'ID_VENTA',
+    sourceKey: 'ID_VENTA'
+})
+
+detail_sale.belongsTo(sale, {
+    foreignKey: 'ID_VENTA',
+    targetId: 'ID_VENTA'
+})
