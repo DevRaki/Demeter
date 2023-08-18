@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 import { user } from './user.model.js';
-import { role_permissions } from './role_permissions.model.js';
+import { role_permission } from './role_permission.model.js';
 
 export const role = sequelize.define('ROLES', {
     ID_ROL: {
@@ -26,12 +26,12 @@ user.belongsTo(role, {
     targetId: 'ID_ROL'
 })
 
-role.hasOne(role_permissions, {
+role.hasOne(role_permission, {
     foreignKey: 'ID_ROL',
     sourceKey: 'ID_ROL'
 })
 
-role_permissions.belongsTo(role, {
+role_permission.belongsTo(role, {
     foreignKey: 'ID_ROL',
     targetKey: 'ID_ROL'
 })
