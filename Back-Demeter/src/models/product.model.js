@@ -12,7 +12,8 @@ export const product = sequelize.define('PRODUCTOS', {
     Nombre_Producto: {
         type: DataTypes.STRING,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     Precio: {
         type: DataTypes.DECIMAL(10, 2),
@@ -20,7 +21,8 @@ export const product = sequelize.define('PRODUCTOS', {
     },
     Imagen: {
         type: DataTypes.BLOB,
-        required: true
+        required: true,
+        unique: true
     }
 });
 

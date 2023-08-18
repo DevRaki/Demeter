@@ -19,6 +19,7 @@ export const user = sequelize.define('USUARIOS', {
     Email: {
         type: DataTypes.STRING,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     }
 });
