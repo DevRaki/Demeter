@@ -1,4 +1,5 @@
-import { user } from '../models/user.model.js'
+import { user } from '../models/user.model.js';
+import { bcrypt } from 'bcryptjs'
 
 export const getUsers = async (req, res) => {
     try {
@@ -13,13 +14,20 @@ export const createUser = async (req, res) => {
     const { Nombre_Usuario, Contrasena, Email } = req.body;
 
     try {
+        
+        const passwordHast = await bcrypt.hast(Contrasena, 10)
+
         const newUser = await user.create({
             Nombre_Usuario,
             Email,
-            Contrasena
+            Contrasena: passwordHast
         })
 
-        res.json(newUser);
+        res.json({
+            id: newUser.id,
+            Nombre: newUser.Nombre_Usuario,
+            Correo: newUser.Email,
+        });
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
