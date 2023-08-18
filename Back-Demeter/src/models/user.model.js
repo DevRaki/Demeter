@@ -9,16 +9,19 @@ export const user = sequelize.define('USUARIOS', {
     },
     Nombre_Usuario: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        allowNull: false,
+        trim: true,
+        validate: {
+            is: /^[0-9a-f]{64}$/i
+        }
     },
     Contrasena: {
         type: DataTypes.STRING,
-        required: true
+        allowNull: false
     },
     Email: {
         type: DataTypes.STRING,
-        required: true,
+        allowNull: false,
         trim: true,
         unique: true
     }

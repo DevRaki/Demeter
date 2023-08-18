@@ -9,7 +9,7 @@ export const recipes = sequelize.define('RECETAS', {
     },
     Cantidad: {
         type: DataTypes.SMALLINT,
-        required: true,
+        allowNull: false,
         trim: true
     }
 });
