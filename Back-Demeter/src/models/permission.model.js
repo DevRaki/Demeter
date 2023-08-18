@@ -10,12 +10,12 @@ export const permissions = sequelize.define('PERMISOS', {
     },
     Nombre_Permiso: {
         type: DataTypes.STRING,
-        required: true,
+        allowNull: false,
         trim: true
     },
     _Url: {
         type: DataTypes.STRING,
-        required: true
+        allowNull: false
     }
 });
 
