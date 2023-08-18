@@ -3,32 +3,14 @@ import { user } from '../models/user.model.js'
 export const getUsers = async (req, res) => {
     try {
         const users = await user.findAll()
-        res.json(users)
+        res.json(users);
     } catch (error) {
-        return res.status(500).json({ message: error.message })
+        return res.status(500).json({ message: error.message });
     }
 };
 
-export const getUser = async (req, res) => {
-    try {
-        const { id } = req.params
-        const user = await user.findOne({
-            where: {
-                id
-            }
-        })
-
-        if (!user)
-            return res.status(404).json({message: 'El usuario no existe'})
-
-        res.json(user);
-    } catch (error) {
-        return res.status(500).json({message: error.message});
-    }
-}
-
 export const createUser = async (req, res) => {
-    const { Nombre_Usuario, Contrasena, Email } = req.body
+    const { Nombre_Usuario, Contrasena, Email } = req.body;
 
     try {
         const newUser = await user.create({
@@ -39,7 +21,7 @@ export const createUser = async (req, res) => {
 
         res.json(newUser);
     } catch (error) {
-        return res.status(500).json({ message: error.message })
+        return res.status(500).json({ message: error.message });
     }
 };
 
@@ -56,9 +38,9 @@ export const updateUser = async (req, res) => {
 
         await user.save()
 
-        res.json(user)
+        res.json(user);
     } catch (error) {
-        return res.status(500).json({message: error.message});
+        return res.status(500).json({ message: error.message });
     }
 };
 
@@ -72,8 +54,25 @@ export const deleteUser = async (req, res) => {
             }
         });
 
-        res.sendStatus(204)
+        res.sendStatus(204);
     } catch (error) {
-        return res.status(500).json({ message: error.message })
+        return res.status(500).json({ message: error.message });
+    }
+};
+
+export const getUser = async (req, res) => {
+    try {
+        const { id } = req.params
+        const user = await user.findOne({
+            where: {
+                id
+            }
+        })
+
+        if (!user) return res.status(404).json({ message: 'El usuario no existe' })
+
+        res.json(user);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
     }
 };
