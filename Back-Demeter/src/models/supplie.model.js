@@ -1,9 +1,9 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 import { detail_shopping } from './detail_shopping.model.js';
-import { recipes } from './recipes.model.js';
+import { recipe } from './recipe.model.js';
 
-export const supplies = sequelize.define('INSUMOS', {
+export const supplie = sequelize.define('INSUMOS', {
     ID_INSUMOS: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -29,22 +29,22 @@ export const supplies = sequelize.define('INSUMOS', {
     }
 });
 
-supplies.hasMany(detail_shopping, {
+supplie.hasMany(detail_shopping, {
     foreignKey: 'ID_INSUMOS',
     sourceKey: 'ID_INSUMOS'
 })
 
-detail_shopping.belongsTo(supplies, {
+detail_shopping.belongsTo(supplie, {
     foreignKey: 'ID_INSUMOS',
     targetId: 'ID_INSUMOS'
 })
 
-supplies.hasMany(recipes, {
+supplie.hasMany(recipe, {
     foreignKey: 'ID_INSUMOS',
     sourceKey: 'ID_INSUMOS'
 })
 
-recipes.belongsTo(supplies, {
+recipe.belongsTo(supplie, {
     foreignKey: 'ID_INSUMOS',
     targetId: 'ID_INSUMOS'
 })

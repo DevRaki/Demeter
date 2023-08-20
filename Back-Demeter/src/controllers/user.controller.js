@@ -1,6 +1,6 @@
 import { user } from '../models/user.model.js';
-import { bcrypt } from 'bcryptjs';
-import {jwt} from 'jsonwebtoken';
+import bcryptjs from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 export const getUsers = async (req, res) => {
     try {
@@ -16,7 +16,7 @@ export const createUser = async (req, res) => {
 
     try {
         
-        const passwordHast = await bcrypt.hast(Contrasena, 10)
+        const passwordHast = await bcryptjs.hast(Contrasena, 10)
 
         const newUser = await user.create({
             Nombre_Usuario,

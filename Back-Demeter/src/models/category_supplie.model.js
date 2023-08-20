@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
-import { supplies } from './supplies.model.js';
+import { supplie } from './supplie.model.js';
 
-export const category_supplies = sequelize.define('CATEGORIA_INSUMOS', {
+export const category_supplie = sequelize.define('CATEGORIA_INSUMOS', {
     ID_CATEGORIA_INSUMO: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -19,12 +19,12 @@ export const category_supplies = sequelize.define('CATEGORIA_INSUMOS', {
     }
 });
 
-category_supplies.hasMany(supplies, {
+category_supplie.hasMany(supplie, {
     foreignKey: 'ID_CATEGORIA_INSUMO',
     sourceKey: 'ID_CATEGORIA_INSUMO'
 })
 
-supplies.belongsTo(category_supplies, {
+supplie.belongsTo(category_supplie, {
     foreignKey: 'ID_CATEGORIA_INSUMO',
     targetId: 'ID_CATEGORIA_INSUMO'
 })
