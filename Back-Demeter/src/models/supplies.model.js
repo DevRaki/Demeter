@@ -11,8 +11,7 @@ export const supplies = sequelize.define('INSUMOS', {
     },
     Nombre_Insumo: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     },
     Cantidad_Insumo: {
         type: DataTypes.SMALLINT,

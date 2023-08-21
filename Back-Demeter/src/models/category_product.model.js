@@ -10,8 +10,7 @@ export const category_product = sequelize.define('CATEGORIA_PRODUCTOS', {
     },
     Nombre_Categoria: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     },
     Imagen: {
         type: DataTypes.BLOB,

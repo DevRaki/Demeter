@@ -10,8 +10,7 @@ export const shopping = sequelize.define('COMPRAS', {
     },
     Fecha_Compra: {
         type: DataTypes.DATE,
-        required: true,
-        trim: true
+        required: true
     },
     Valor_Compra: {
         type: DataTypes.DECIMAL(10, 2),

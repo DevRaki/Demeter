@@ -9,11 +9,10 @@ export const user = sequelize.define('USUARIOS', {
     },
     Nombre_Usuario: {
         type: DataTypes.STRING,
-        allowNull: false,
-        trim: true,
-        validate: {
-            is: /^[0-9a-f]{64}$/i
-        }
+        allowNull: false
+        // validate: {
+        //     is: /^[0-9a-f]{64}$/i
+        // }
     },
     Contrasena: {
         type: DataTypes.STRING,
@@ -22,7 +21,6 @@ export const user = sequelize.define('USUARIOS', {
     Email: {
         type: DataTypes.STRING,
         allowNull: false,
-        trim: true,
         unique: true
     }
 });

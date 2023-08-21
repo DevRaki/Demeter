@@ -10,8 +10,7 @@ export const payment_method = sequelize.define('METODO_PAGO', {
     },
     Nombre: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     }
 });
 

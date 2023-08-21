@@ -10,8 +10,7 @@ export const restaurant = sequelize.define('RESTAURANTES', {
     },
     Nombre_Restaurante: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     }
 });
 
