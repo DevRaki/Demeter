@@ -12,7 +12,6 @@ export const product = sequelize.define('PRODUCTOS', {
     Nombre_Producto: {
         type: DataTypes.STRING,
         allowNull: false,
-        trim: true,
         unique: true
     },
     Precio: {

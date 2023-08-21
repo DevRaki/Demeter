@@ -10,23 +10,19 @@ export const supplier = sequelize.define('PROVEEDORES', {
     },
     Nombre: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     },
     Telefono: {
         type: DataTypes.INTEGER,
-        required: true,
-        trim: true
+        required: true
     },
     Email: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     },
     Ciudad: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     }
 });
 

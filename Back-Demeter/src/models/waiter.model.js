@@ -10,8 +10,7 @@ export const waiter = sequelize.define('MESEROS', {
     },
     Nombre: {
         type: DataTypes.STRING,
-        required: true,
-        trim: true
+        required: true
     }
 });
 

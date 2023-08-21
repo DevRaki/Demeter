@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/dataBase.js';
 
-export const role_permissions = sequelize.define('DETALLE_ROLES', {
+export const role_permission = sequelize.define('DETALLE_ROLES', {
     ID_ROL_PERMISOS: {
         type: DataTypes.INTEGER,
         primaryKey: true,
