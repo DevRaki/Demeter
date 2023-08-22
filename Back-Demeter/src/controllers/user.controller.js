@@ -82,3 +82,55 @@ export const profile = (req, res) => {
 
     })
 };
+
+export const updateUser = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { Nombre_Usuario, Contrasena, Email } = req.body
+
+        const user = await user.findByPk(id)
+
+        user.Nombre_Usuario = Nombre_Usuario
+        user.Contrasena = Contrasena
+        user.Email = Email
+
+        await user.save()
+
+        res.json(user);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+
+export const deleteUser = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        await user.destroy({
+            where: {
+                id,
+            }
+        });
+
+        res.sendStatus(204);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+
+export const getUser = async (req, res) => {
+    try {
+        const { id } = req.params
+        const user = await user.findOne({
+            where: {
+                id
+            }
+        })
+
+        if (!user) return res.status(404).json({ message: 'El usuario no existe' })
+
+        res.json(user);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
