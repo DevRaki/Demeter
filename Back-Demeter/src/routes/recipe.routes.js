@@ -1,12 +1,13 @@
 import { Router } from "express";
-import { createRecipe, deleteRecipe, getRecipe, getRecipes, updateRecipe } from '../controllers/recipe.controller.js'
+import { createRecipe, deleteRecipe, getRecipe, getRecipes, updateRecipe } from '../controllers/recipe.controller.js';
+import { authRequired } from '../middlewares/validateToken.js'
 
 const router = Router();
 
-router.get('/recipe', getRecipes);
-router.post('/recipe', createRecipe);
-router.put('/recipe/:id', updateRecipe);
-router.delete('/recipe/:id', deleteRecipe);
-router.get('/recipe/:id', getRecipe);
+router.get('/recipe', authRequired, getRecipes);
+router.post('/recipe', authRequired, createRecipe);
+router.put('/recipe/:id', authRequired, updateRecipe);
+router.delete('/recipe/:id', authRequired, deleteRecipe);
+router.get('/recipe/:id', authRequired, getRecipe);
 
 export default router;
