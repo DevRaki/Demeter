@@ -15,9 +15,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/Demeter", roleRoutes);
-app.use("/Demeter", userRoutes);
-app.use("/Demeter", productRoutes);
-app.use("/Demeter", recipeRoutes);
+app.use("/", roleRoutes);
+app.use("/", userRoutes);
+app.use("/", productRoutes);
+app.use("/", recipeRoutes);
 
 export default app;

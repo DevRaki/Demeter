@@ -29,14 +29,14 @@ export const updatePermission = async (req, res) => {
         const { id } = req.params
         const { Nombre_Permiso, _Url } = req.body
 
-        const permission = await permission.findByPk(id)
+        const updatePermission = await permission.findByPk(id)
 
-        permission.Nombre_Permiso = Nombre_Permiso
-        permission._Url = _Url
+        updatePermission.Nombre_Permiso = Nombre_Permiso
+        updatePermission._Url = _Url
 
-        await permission.save()
+        await updatePermission.save()
 
-        res.json(permission);
+        res.json(updatePermission);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -48,7 +48,7 @@ export const deletePermission = async (req, res) => {
 
         await permission.destroy({
             where: {
-                id,
+                ID_PERMISO: id,
             }
         });
 
@@ -61,15 +61,13 @@ export const deletePermission = async (req, res) => {
 export const getPermission = async (req, res) => {
     try {
         const { id } = req.params
-        const permission = await permission.findOne({
-            where: {
-                id
-            }
+        const getPermission = await permission.findOne({
+            where: { ID_PERMISO: id }
         })
 
-        if (!permission) return res.status(404).json({ message: 'El permiso no existe' })
+        if (!getPermission) return res.status(404).json({ message: 'El permiso no existe' })
 
-        res.json(permission);
+        res.json(getPermission);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

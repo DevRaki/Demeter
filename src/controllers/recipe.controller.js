@@ -29,13 +29,13 @@ export const updateRecipe = async (req, res) => {
         const { id } = req.params
         const { Cantidad } = req.body
 
-        const recipe = await recipe.findByPk(id)
+        const updateRecipe = await recipe.findByPk(id)
 
-        recipe.Cantidad = Cantidad
+        updateRecipe.Cantidad = Cantidad
 
-        await recipe.save()
+        await updateRecipe.save()
 
-        res.json(recipe);
+        res.json(updateRecipe);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -46,9 +46,7 @@ export const deleteRecipe = async (req, res) => {
         const { id } = req.params
 
         await recipe.destroy({
-            where: {
-                id,
-            }
+            where: { ID_RECETA: id, }
         });
 
         res.sendStatus(204)
@@ -60,15 +58,15 @@ export const deleteRecipe = async (req, res) => {
 export const getRecipe = async (req, res) => {
     try {
         const { id } = req.params
-        const recipe = await recipe.findOne({
+        const getRecipe = await recipe.findOne({
             where: {
-                id
+                ID_RECETA: id
             }
         })
 
-        if (!recipe) return res.status(404).json({ message: 'La receta no existe no existe' })
+        if (!getRecipe) return res.status(404).json({ message: 'La receta no existe no existe' })
 
-        res.json(recipe);
+        res.json(getRecipe);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
