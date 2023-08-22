@@ -46,9 +46,7 @@ export const deleteRecipe = async (req, res) => {
         const { id } = req.params
 
         await recipe.destroy({
-            where: {
-                ID_RECETA: id,
-            }
+            where: { ID_RECETA: id, }
         });
 
         res.sendStatus(204)

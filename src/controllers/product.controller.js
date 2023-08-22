@@ -67,10 +67,7 @@ export const deleteProduct = async (req, res) => {
         const { id } = req.params
 
         await product.destroy({
-
-            where: {
-                ID_PRODUCTO: id,
-            }
+            where: { ID_PRODUCTO: id, }
         });
 
         res.sendStatus(204);

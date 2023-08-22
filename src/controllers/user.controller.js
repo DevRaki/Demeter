@@ -107,9 +107,7 @@ export const deleteUser = async (req, res) => {
         const { id } = req.params
 
         await user.destroy({
-            where: {
-                ID_USUARIO: id
-            }
+            where: { ID_USUARIO: id }
         });
 
         res.sendStatus(204);

@@ -46,9 +46,7 @@ export const deleteRole = async (req, res) => {
         const { id } = req.params
 
         await role.destroy({
-            where: {
-                ID_ROL: id,
-            }
+            where: { ID_ROL: id, }
         });
     } catch (error) {
         return res.status(500).json({ message: error.message });

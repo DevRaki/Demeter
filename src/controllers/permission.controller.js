@@ -62,9 +62,7 @@ export const getPermission = async (req, res) => {
     try {
         const { id } = req.params
         const getPermission = await permission.findOne({
-            where: {
-                ID_PERMISO: id
-            }
+            where: { ID_PERMISO: id }
         })
 
         if (!getPermission) return res.status(404).json({ message: 'El permiso no existe' })
