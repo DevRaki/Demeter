@@ -88,15 +88,15 @@ export const updateUser = async (req, res) => {
         const { id } = req.params
         const { Nombre_Usuario, Contrasena, Email } = req.body
 
-        const user = await user.findByPk(id)
+        const updateUser = await user.findByPk( id )
 
-        user.Nombre_Usuario = Nombre_Usuario
-        user.Contrasena = Contrasena
-        user.Email = Email
+        updateUser.Nombre_Usuario = Nombre_Usuario
+        updateUser.Contrasena = Contrasena
+        updateUser.Email = Email
+        
+        await updateUser.save()
 
-        await user.save()
-
-        res.json(user);
+        res.json(updateUser);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -108,7 +108,7 @@ export const deleteUser = async (req, res) => {
 
         await user.destroy({
             where: {
-                id,
+                ID_USUARIO: id
             }
         });
 
@@ -121,15 +121,11 @@ export const deleteUser = async (req, res) => {
 export const getUser = async (req, res) => {
     try {
         const { id } = req.params
-        const user = await user.findOne({
-            where: {
-                id
-            }
-        })
+        const getUser = await user.findOne({ where: { ID_USUARIO: id } })
 
-        if (!user) return res.status(404).json({ message: 'El usuario no existe' })
+        if (!getUser) return res.status(404).json({ message: 'El usuario no existe' })
 
-        res.json(user);
+        res.json(getUser);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

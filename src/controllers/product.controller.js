@@ -40,18 +40,18 @@ export const updateProduct = async (req, res) => {
 
     try {
 
-        const { ID_PRODUCTO } = req.params
+        const { id } = req.params
         const { Nombre_Producto, Precio, Imagen } = req.body
 
-        const product = await product.findByPk(ID_PRODUCTO)
+        const updateProduct = await product.findByPk(id)
 
-        product.Nombre_Producto = Nombre_Producto
-        product.Precio = Precio
-        product.Imagen = Imagen
+        updateProduct.Nombre_Producto = Nombre_Producto
+        updateProduct.Precio = Precio
+        updateProduct.Imagen = Imagen
 
-        await product.save()
+        await updateProduct.save()
 
-        res.json(product);
+        res.json(updateProduct);
 
     } catch (error) {
 
@@ -64,12 +64,12 @@ export const deleteProduct = async (req, res) => {
 
     try {
 
-        const { ID_PRODUCTO } = req.params
+        const { id } = req.params
 
         await product.destroy({
 
             where: {
-                ID_PRODUCTO,
+                ID_PRODUCTO: id,
             }
         });
 
@@ -86,16 +86,16 @@ export const getProduct = async (req, res) => {
 
     try {
 
-        const { ID_PRODUCTO } = req.params
-        const product = await product.findOne({
+        const { id } = req.params
+        const getProduct = await product.findOne({
             where: {
-                ID_PRODUCTO
+                ID_PRODUCTO: id
             }
         })
 
-        if (!product) return res.status(404).json({ message: 'El producto no existe' })
+        if (!getProduct) return res.status(404).json({ message: 'El producto no existe' })
 
-        res.json(product);
+        res.json(getProduct);
 
     } catch (error) {
 

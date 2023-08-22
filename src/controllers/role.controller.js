@@ -29,13 +29,13 @@ export const updateRole = async (req, res) => {
         const { id } = req.params
         const { Nombre_Rol } = req.body
 
-        const role = await role.findByPk(id)
+        const updateRole = await role.findByPk(id)
 
-        role.Nombre_Rol = Nombre_Rol
+        updateRole.Nombre_Rol = Nombre_Rol
 
-        await role.save()
+        await updateRole.save()
 
-        res.json(role);
+        res.json(updateRole);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -47,7 +47,7 @@ export const deleteRole = async (req, res) => {
 
         await role.destroy({
             where: {
-                id,
+                ID_ROL: id,
             }
         });
     } catch (error) {
@@ -58,15 +58,15 @@ export const deleteRole = async (req, res) => {
 export const getRole = async (req, res) => {
     try {
         const { id } = req.params
-        const role = await role.findOne({
+        const getRole = await role.findOne({
             where: {
-                id
+                ID_ROL: id
             }
         })
 
-        if (!role) return res.status(404).json({ message: 'El rol no existe.' })
+        if (!getRole) return res.status(404).json({ message: 'El rol no existe.' })
 
-        res.json(role);
+        res.json(getRole);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
