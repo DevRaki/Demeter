@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createSale, getSales } from "../controllers/sale.controller.js";
+import { createSale, getSales, updateSale } from "../controllers/sale.controller.js";
 
 
 const router = Router();
@@ -7,6 +7,6 @@ const router = Router();
 
 router.get("/sale",  getSales)
 router.post('/sale', createSale)
-
+router.put('/sale/:id', updateSale)
 
 export default router;

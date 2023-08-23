@@ -38,9 +38,6 @@ export const sale = sequelize.define('VENTAS', {
     
    
 
-},
-{
-    timestamps : false
 });
 sale.hasMany(detail_sale, {
     foreignKey: 'ID_VENTA',
