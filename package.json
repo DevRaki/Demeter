@@ -1,0 +1,25 @@
+{
+  "name": "demeter",
+  "version": "1.0.0",
+  "description": "Subir el proyecto con cada parte dividido en ramas.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "morgan": "1.10.0",
+    "mysql2": "3.6.0",
+    "nodemon": "3.0.1",
+    "pg": "8.11.2",
+    "pg-hstore": "2.3.4",
+    "sequelize": "6.32.1"
+  }
+}
