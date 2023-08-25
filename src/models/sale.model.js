@@ -35,13 +35,14 @@ export const sale = sequelize.define('VENTAS', {
         type: DataTypes.DECIMAL(10, 2),
         required: true
     },
+    ID_MESERO: {
+        type : DataTypes.INTEGER,
+        allowNull : true
+    }
     
    
 
-},
-{
-    timestamps : false
-});
+},);
 sale.hasMany(detail_sale, {
     foreignKey: 'ID_VENTA',
     sourceKey: 'ID_VENTA'
@@ -49,5 +50,5 @@ sale.hasMany(detail_sale, {
 
 detail_sale.belongsTo(sale, {
     foreignKey: 'ID_VENTA',
-    targetId: 'ID_VENTA'
+    targetKey: 'ID_VENTA'
 })

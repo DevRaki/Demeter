@@ -10,7 +10,13 @@ export const detail_sale = sequelize.define('DETALLE_VENTAS', {
     Cantidad: {
         type: DataTypes.INTEGER,
         required: true
+    },
+    SubTotal:{
+        type: DataTypes.INTEGER,
+        required : true
     }
+    
 },{
     timestamps : false
 });
+

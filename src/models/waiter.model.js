@@ -11,6 +11,10 @@ export const waiter = sequelize.define('MESEROS', {
     Nombre: {
         type: DataTypes.STRING,
         required: true
+    },
+    ID_RESTAURANTE: {
+        type : DataTypes.INTEGER,
+        allowNull : false
     }
 });
 
@@ -19,7 +23,8 @@ waiter.hasMany(sale, {
     sourceKey: 'ID_MESERO'
 })
 
-sale.belongsTo(waiter, {
+waiter.belongsTo(sale, {
     foreignKey: 'ID_MESERO',
     targetId: 'ID_MESERO'
 })
+

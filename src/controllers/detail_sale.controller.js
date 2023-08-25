@@ -1,14 +1,24 @@
 import { sale } from '../models/sale.model.js';
 import { detail_sale } from '../models/detail_sale.model.js';
+import { product } from '../models/product.model.js';
 
 
 export const createDetailSale = async(req, res) => {
     
     const {ID_DETALLE_VENTA, Cantidad, ID_VENTA, ID_PRODUCTO} = req.body;
+    console.log(ID_PRODUCTO)
+    
+
 try {
+    
+    const producto = await product.findByPk(ID_PRODUCTO)
+
+    const SubTotal = producto.Precio * Cantidad
+
     const newSale = await detail_sale.create({
         ID_DETALLE_VENTA,
         Cantidad,
+        SubTotal,
         ID_VENTA,
         ID_PRODUCTO
     })
