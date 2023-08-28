@@ -1,6 +1,7 @@
 import { sale } from '../models/sale.model.js';
 import { detail_sale } from '../models/detail_sale.model.js';
 import { product } from '../models/product.model.js';
+import { where } from 'sequelize';
 
 
 export const createDetailSale = async(req, res) => {
@@ -34,3 +35,13 @@ export const getDetailSale = async (req, res) => {
     const Data = await detail_sale.findAll()
     res.json(Data)
 }
+
+export const getDetailWSale = async (req, res) => {
+
+    const{id} = req.params 
+    const Data = await detail_sale.findAll({where:{
+        ID_VENTA : id
+    }})
+    res.json(Data)
+}
+

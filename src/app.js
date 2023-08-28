@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 
 import roleRoutes from './routes/role.routes.js'
 import userRoutes from './routes/user.routes.js'
@@ -14,6 +15,7 @@ import { recipe } from './models/recipe.model.js';
 
 const app = express();
 
+app.use(cors());
 app.use(morgan('dev'));
 //middlewares
 app.use(express.json());

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: rgb(190, 193, 193);
+}
+.table td,
+.table th {
+    padding: 10px; 
+    text-align: center;
+    border-width: 2px;
+    border-color: black;
+}
+
+.Sales {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
