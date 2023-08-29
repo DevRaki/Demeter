@@ -1,7 +1,8 @@
- 
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import './SaleForm.css'
 import axios from 'axios';
+
 
 
 
@@ -13,6 +14,8 @@ function SaleForm() {
     ID_MESERO: ''
   });
   
+
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
@@ -31,13 +34,18 @@ function SaleForm() {
     }
   };
 
-  const onSubmit = (data) =>{
+  const onSubmit =  async (data) =>{
     data.preventDefault()
-    axios.post("http://localhost:5000/sale", formValues ).then((response) =>{
-      console.log(response.data)
-      console.log("xdnt")
-    });
-    console.log(formValues)
+    try {
+      const response = await axios.post("http://localhost:5000/sale", formValues );
+      const { ID_VENTA } = response.data;
+      console.log('Form Values:', formValues);
+      console.log('ID_VENTA:', ID_VENTA);
+      window.location.href = `http://localhost:5173/sale_creation/${ID_VENTA}`;
+      console.log(formValues)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -69,7 +77,7 @@ function SaleForm() {
           <input
             type="number"
             name="Descuento"
-            value={formValues.descuento}
+            value={formValues.Descuento}
             onChange={handleInputChange}
           />
         </div>

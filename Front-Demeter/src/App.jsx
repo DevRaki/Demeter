@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sales from './pages/sales'
 import Sale_detail from './pages/sale_detai'
-import Create_sale from './pages/Create_sale'
 import SaleForm from './pages/sub_Csale/saleForm'
+import SaleCreation from './pages/sub_Csale/saleCreation'
 function App() {
   return (
     <BrowserRouter>
@@ -22,8 +22,8 @@ function App() {
         <Route path='/recipe/:id' element={<h1>Actualizar Receta</h1>} />
         <Route path='/sales' element={<Sales />}/>
         <Route path='/sale_detail/:id' element={<Sale_detail/>}/>
-        <Route path='/create_sale' element={<Create_sale/>}/>
         <Route path='/sale_form' element={<SaleForm/>}/>
+        <Route path='/sale_creation/:id' element={<SaleCreation/>}/>
       </Routes>
     </BrowserRouter>
   )

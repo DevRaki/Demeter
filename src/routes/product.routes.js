@@ -4,7 +4,7 @@ import { authRequired } from '../middlewares/validateToken.js'
 
 const router = Router();
 
-router.get('/product', authRequired, getProducts);
+router.get('/product',  getProducts);
 router.post('/product', authRequired, createProduct);
 router.put('/product/:id', authRequired, updateProduct);
 router.delete('/product/:id', authRequired, deleteProduct);
