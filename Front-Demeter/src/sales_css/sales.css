@@ -1,22 +1,159 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 body{
-    background-color: rgb(190, 193, 193);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #b9afaf;
+    font-family: 'Poppins', sans-serif;
 }
+
+
+.table{
+    border-collapse: collapse;
+    margin-left:20%;
+}
+
 .table td,
 .table th {
     padding: 10px; 
     text-align: center;
     border-width: 2px;
     border-color: black;
+    width:10ch;
+    
 }
 
-.Sales {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+.table th{
+    background-color: #1c1c1c;
+    color: azure;
+    font-weight: lighter;
+}
+
+.sale_table{
+    margin-top: 10%;
+}
+
+
+
+.sale-Title{
+    position:fixed;
+    top: 10%;
+    left: 20%;
+    margin: 10px;
+    font-size: 35px;
+    font-weight:900;
+
+}
+
+.New_saleButton{
+    background-color: #FF9900;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.New_saleButton:hover {
+    background-color: #FF8C00;
   }
+
+.button-cont{
+    padding-bottom: 2%;
+    float: right;
+}
+.button-waiter{
+    margin-left:20%;
+    padding-bottom: 2%;
+    float: left;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination-item {
+    margin: 0 5%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination-item:not(:last-child) {
+    margin-right: 5px;
+}
+
+.pagination-item:hover {
+    background-color: #f0f0f0;
+}
+
+.active {
+    background-color: #FF9900;
+    color: black;
+}
+
+.pagination-disabled {
+    opacity: 0;
+    cursor: not-allowed;
+}
+
+
+.table_details{
+    margin-top: 20%;
+    border-collapse: collapse;
+    margin-left:20%;
+}
+
+.table_details td,
+.table_details th {
+    padding: 10px; 
+    text-align: center;
+    border-width: 2px;
+    border-color: black;
+    width:10ch;
+    
+}
+
+.table_details th{
+    background-color: #1c1c1c;
+    color: azure;
+    font-weight: lighter;
+}
+
+.total{
+    margin-left: 20%;
+    float: left;
+}
+
+
+.sale-Title-Detail{
+    position:fixed;
+    top: 16%;
+    left: 20%;
+    margin: 10px;
+    font-size: 35px;
+    font-weight:900;
+
+}
+
+.back{
+    position:fixed;
+    top: 5%;
+    left: 20%;
+    margin: 10px;
+    font-size: 20px;
+    font-weight:900;
+
+}

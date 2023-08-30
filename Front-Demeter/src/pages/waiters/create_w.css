@@ -1,0 +1,51 @@
+
+.waiter-form-container{
+  
+}
+
+.sale-Title{
+    position:fixed;
+    top: 10%;
+    left: 20%;
+    font-size: 35px;
+    font-weight:900;
+    
+}
+.input-waiter{
+  font-size: 30px;
+}
+  
+  .submit-button {
+
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: darkorange;
+  }
+
+  
+  .input-field {
+    margin-bottom: 10px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  

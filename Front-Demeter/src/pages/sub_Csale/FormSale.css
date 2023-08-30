@@ -1,16 +1,11 @@
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+
   }
 .sale-form-container {
     
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: 30%;
     padding: 20px;
     background-color: #b58109;
     border-radius: 8px;
@@ -30,7 +25,7 @@ body {
   .sale-form-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
   }
   
   .form-field {
@@ -63,5 +58,15 @@ body {
   }
   
   .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #000000;
   }
+
+  .back{
+    position:fixed;
+    top: 5%;
+    left: 20%;
+    margin: 10px;
+    font-size: 20px;
+    font-weight:900;
+
+}

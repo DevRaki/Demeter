@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom"
 import '../sales_css/sales.css'
 
@@ -29,7 +30,17 @@ function Sale_detail(updateTrigger ) {
     }
 
     return (
-        <div className='Sales'>
+        <div className='details'>
+           <div className="back">
+           <Link to="/sales">
+           <button className="back-button">
+                 &#8592; Regresar
+            </button>
+            </Link>
+           </div>
+            <div className='Title_detail'>
+                <h1 className='sale-Title-Detail'>Venta Numero {id}</h1>
+            </div>
         <table className="table">
             <thead>
                 <tr>
@@ -43,8 +54,9 @@ function Sale_detail(updateTrigger ) {
                 {getSale()} 
             </tbody>
         </table>
-            <h1>Total: {total}</h1>
-
+            <div className="total">
+                <h1>Total: {total}</h1>
+            </div>
         </div>
     )
 

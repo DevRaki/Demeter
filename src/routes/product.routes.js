@@ -8,7 +8,7 @@ router.get('/product',  getProducts);
 router.post('/product', authRequired, createProduct);
 router.put('/product/:id', authRequired, updateProduct);
 router.delete('/product/:id', authRequired, deleteProduct);
-router.get('/product/:id', authRequired, getProduct);
+router.get('/product/:id', getProduct);
 router.get('/product/:id/recipes', authRequired, getProductRecipes);
 
 export default router;

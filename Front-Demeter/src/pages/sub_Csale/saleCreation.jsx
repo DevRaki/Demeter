@@ -3,8 +3,9 @@ import Sale_detail from '../sale_detai';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
 import  './saleCreations.css'
+
+
 function SaleCreation() {
 
   let { id } = useParams(); 
@@ -22,15 +23,18 @@ function SaleCreation() {
 }, [])
 
 function getProduct() {
-
-  return List_Products.map((value, key) => (
-      <th>
-          <button className="button" onClick={() => {createDetail(value.ID_PRODUCTO), console.log}}>{value.Nombre_Producto}</button>
-      </th>
-      
-  ))
-
-  
+  return (
+    <div>
+      {List_Products.map((value, key) => (
+        <span key={value.ID_PRODUCTO}>
+          <button className="product_button" onClick={() => createDetail(value.ID_PRODUCTO)}>
+            {value.Nombre_Producto}
+          </button>
+          {(key + 1) % 3 === 0 && <br />} 
+        </span>
+      ))}
+    </div>
+  );
 }
 
 
@@ -59,20 +63,13 @@ function getProduct() {
 
     <div className="whole">
       <div className="left-side">
-          <Sale_detail  updateTrigger={updateTrigger} />
+          <div className="detail_table">
+            <Sale_detail  updateTrigger={updateTrigger} />
+          </div>
       </div>
-      <div className="rigth-side">
-      <table className="table_p">
-            <thead>
-                <tr>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  {getProduct()}
-                </tr> 
-            </tbody>
-        </table>
+      <div className="rigth-side"> 
+        {getProduct()}    
+      
       </div>
     </div>
 
