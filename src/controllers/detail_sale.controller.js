@@ -44,4 +44,4 @@ export const getDetailWSale = async (req, res) => {
     }})
     res.json(Data)
 }
-
+ 
