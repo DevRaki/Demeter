@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import  './saleCreations.css'
+import SaleForm from './saleForm';
 
 
 function SaleCreation() {
@@ -62,6 +63,11 @@ function getProduct() {
   return (
 
     <div className="whole">
+
+      <div className="formS">
+          <SaleForm/>
+      </div>
+
       <div className="left-side">
           <div className="detail_table">
             <Sale_detail  updateTrigger={updateTrigger} />

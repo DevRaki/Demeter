@@ -1,72 +1,36 @@
-
-body {
-
-  }
 .sale-form-container {
-    
-    max-width: 400px;
-    margin-left: 30%;
-    padding: 20px;
-    background-color: #b58109;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 130%;
-    display: flex;
-     flex-direction: column;
-     align-items: center;
-    justify-content: center;
-  
-  }
-  
-  .sale-form-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #000000;
-  }
-  
-  .form-field {
-    margin-bottom: 15px;
-  }
-  
-  .form-field label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-field input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .submit-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #000000;
-  }
+  margin-top: 11%;
+  margin-left: 33%;
+  margin-bottom: 10%;
 
-  .back{
-    position:fixed;
-    top: 5%;
-    left: 20%;
-    margin: 10px;
-    font-size: 20px;
-    font-weight:900;
+  width: 100%;
+}
 
+.sale-form-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+
+.sale-form-container input {
+  border-radius: 30%;
+  width: 30px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.custom-button {
+  background-color: #FF9900;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #FF9900;
 }

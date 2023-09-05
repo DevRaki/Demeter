@@ -9,6 +9,7 @@
 
 
 .left-side {
+  
   position: relative;
   width: 50%;
   height: 100%;
@@ -19,12 +20,12 @@
   width: 50%;
   height: 100%;
   display: flex;
-  align-items: center;
 }
 
 
 
 .product_button {
+
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 10px 20px;
@@ -41,7 +42,6 @@
 
 .detail_table{
   margin-right: 30%;
-  margin-top: 40%;
   position: relative;
 }
 

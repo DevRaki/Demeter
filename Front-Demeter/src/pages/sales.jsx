@@ -12,7 +12,8 @@ function Sales() {
 
     useEffect(() => {
         axios.get("http://localhost:5000/sale").then((response) => {
-            setList_Sales(response.data)
+            const sortedSales = response.data.sort((a, b) => b.ID_VENTA - a.ID_VENTA);
+            setList_Sales(sortedSales);
         })
     }, []);
     function handlePageChange(selectedPage) {
@@ -40,6 +41,21 @@ function Sales() {
         ))
         
     }
+    const click = async () => {
+        try {
+          const response = await axios.post("http://localhost:5000/sale", {
+            Venta_Rapida : 1,
+            Descuento : 0.0
+          });
+          console.log("gols")
+          const { ID_VENTA } = response.data;
+          window.location.href = `http://localhost:5173/sale_creation/${ID_VENTA}`;
+          console.log(formValues);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
 
     return (
         <div className='Sales'>
@@ -47,9 +63,9 @@ function Sales() {
                 <h1 className='sale-Title'>Ventas</h1>
             </div>
          <div className="button-cont">
-        <Link to="/sale_form">
-          <button className='New_saleButton'>Nueva venta</button>
-        </Link>
+       
+          <button className='New_saleButton' onClick={() => click()}>Nueva venta</button>
+        
          </div>
          <div className="button-waiter">
         <Link to="/waiter_form">

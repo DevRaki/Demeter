@@ -63,3 +63,21 @@ export const getSalesWithDetails = async (req, res) =>{
     
 
 }
+
+
+export const updateSaleParams = async(req, res) => {
+    try {
+    const {id} = req.params
+    const { Venta_Rapida, ID_MESERO, Descuento } = req.body
+    const newSale = await sale.findByPk(id)
+    await newSale.update({
+        Venta_Rapida : Venta_Rapida,   
+        Descuento : Descuento,
+        ID_MESERO : ID_MESERO
+    })
+
+    res.json(newSale)
+    } catch (error) { 
+        return res.status(500).json({ message: error.message });
+    }
+}
