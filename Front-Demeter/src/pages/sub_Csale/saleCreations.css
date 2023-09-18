@@ -9,7 +9,6 @@
 
 
 .left-side {
-  
   position: relative;
   width: 50%;
   height: 100%;
@@ -20,6 +19,7 @@
   width: 50%;
   height: 100%;
   display: flex;
+  
 }
 
 
@@ -35,8 +35,13 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  width: 100px;
+  width: 150px;
   height: 100px;
+}
+
+.product_button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 

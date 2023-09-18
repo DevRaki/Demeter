@@ -5,44 +5,47 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    background-color: #b9afaf;
+    flex-direction: column;
+    background-color: #ffff;
     font-family: 'Poppins', sans-serif;
-}
-
-
-.table{
-    border-collapse: collapse;
-    margin-left:20%;
-}
-
-.table td,
-.table th {
-    padding: 10px; 
-    text-align: center;
-    border-width: 2px;
-    border-color: black;
-    width:10ch;
-    
-}
-
-.table th{
-    background-color: #1c1c1c;
-    color: azure;
-    font-weight: lighter;
 }
 
 .sale_table{
     margin-top: 10%;
+    margin-left: 12%;
+    min-width: 70vw;
+}
+
+.table_sales{
+    border-radius: 10px;
+    min-width: 70vw;
+    margin-top: 20%;
+}
+
+.table_sales td, .table_detail td{
+    height: 4ch;
+    text-align: center;
+    border-width: 1px;
+    border-color: black;
+    width: 4ch;    
+}
+
+.table_sales th, .table_detail th{
+    background-color: #403E3c;
+    color: #ffff;
+    font-weight: lighter;
+    padding: 6px; 
+    text-align: center;
+    border-width: 1px;
+    border-color: black;
+    align-items: center;
 }
 
 
-
-.sale-Title{
-    position:fixed;
-    top: 10%;
-    left: 20%;
-    margin: 10px;
+.sale_Title{
+    position: relative;
+    margin-bottom: 0%;
+    margin-left: 12%;
     font-size: 35px;
     font-weight:900;
 
@@ -62,14 +65,18 @@ body{
   }
 
 .button-cont{
-    padding-bottom: 2%;
-    float: right;
-}
-.button-waiter{
-    margin-left:20%;
+    margin-top: 3%;
     padding-bottom: 2%;
     float: left;
+    margin-left: 12%;
 }
+.edit-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
 
 .pagination-container {
     display: flex;
@@ -110,27 +117,19 @@ body{
 }
 
 
-.table_details{
-    margin-top: 20%;
-    border-collapse: collapse;
-    margin-left:20%;
+
+.filter_container{
+    font-size: 18_salespx;
+    margin-top: 3%;
+    float: right;
+    padding-right: 5%;
 }
 
-.table_details td,
-.table_details th {
-    padding: 10px; 
-    text-align: center;
-    border-width: 2px;
-    border-color: black;
-    width:10ch;
-    
+.filter_container input{
+    border: 1px solid #333;
 }
 
-.table_details th{
-    background-color: #1c1c1c;
-    color: azure;
-    font-weight: lighter;
-}
+
 
 .total{
     margin-left: 20%;
@@ -143,7 +142,7 @@ body{
     top: 16%;
     left: 20%;
     margin: 10px;
-    font-size: 35px;
+    font-size: 25px;
     font-weight:900;
 
 }
@@ -156,4 +155,16 @@ body{
     font-size: 20px;
     font-weight:900;
 
+}
+
+.filter_container{
+    font-size: 18_salespx;
+    margin-top: 3%;
+    float: right;
+}
+
+.table_detail{
+    border-radius: 10px;
+    min-width: 30vw;
+    margin-left: 10%;
 }

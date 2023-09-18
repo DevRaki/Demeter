@@ -20,6 +20,7 @@ function SaleForm() {
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
+    console.log(formValues)
 
     setFormValues({
       ...formValues,
@@ -73,7 +74,7 @@ function SaleForm() {
          <button
             type="button"
             onClick={handleInputChange}
-            className="custom-button"
+            className="custom_button"
           >
             Guardar
           </button>

@@ -21,10 +21,10 @@ function Sale_detail(updateTrigger ) {
         ))
         return List_Sales.map((value, key) => (
             <tr> 
-                <th scope="row">{value.ID_DETALLE_VENTA}</th> 
-                <th scope="row">{value.ID_PRODUCTO}</th> 
-                <th scope="row">{value.Cantidad}</th> 
-                <th scope='row'>{value.SubTotal}</th>    
+                <td scope="row">{value.ID_DETALLE_VENTA}</td> 
+                <td scope="row">{value.ID_PRODUCTO}</td> 
+                <td scope="row">{value.Cantidad}</td> 
+                <td scope='row'>{value.SubTotal}</td>    
             </tr>
         ))
     }
@@ -41,7 +41,7 @@ function Sale_detail(updateTrigger ) {
             <div className='Title_detail'>
                 <h1 className='sale-Title-Detail'>Venta Numero {id}</h1>
             </div>
-        <table className="table">
+        <table className="table_detail">
             <thead>
                 <tr>
                     <th scope="col">ID</th>

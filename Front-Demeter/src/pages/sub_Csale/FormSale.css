@@ -1,8 +1,7 @@
 .sale-form-container {
-  margin-top: 11%;
+  margin-top: 3%;
   margin-left: 33%;
   margin-bottom: 10%;
-
   width: 100%;
 }
 
@@ -14,15 +13,16 @@
 
 
 .sale-form-container input {
+  border-width: 2px;
   border-radius: 30%;
   width: 30px;
   margin-left: 1%;
   margin-right: 1%;
 }
 
-.custom-button {
-  background-color: #FF9900;
-  color: #fff;
+.custom_button {
+  background-color: #cf0a0a;
+  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -31,6 +31,6 @@
   transition: background-color 0.3s ease;
 }
 
-.custom-button:hover {
+.custom_button:hover {
   background-color: #FF9900;
 }

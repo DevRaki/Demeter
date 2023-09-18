@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 function WaiterForm() {
   const [formData, setFormData] = useState({
-    nombre: '',
+    Nombre: '',
     ID_RESTAURANTE: ''
   });
 
@@ -25,7 +25,7 @@ function WaiterForm() {
       const response = await axios.post('http://localhost:5000/meseros', formData);
       console.log('Form data submitted:', formData);
       console.log('Response from server:', response.data);
-      window.location.href = `/sales`;
+      window.location.href = '/sales'
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -46,12 +46,12 @@ function WaiterForm() {
       <div className="waiter_form">
   <form onSubmit={handleSubmit}>
     <div className="input-field">
-      <label htmlFor="nombre" className='input-waiter'>Nombre:  </label>
+      <label htmlFor="Nombre" className='input-waiter'>Nombre:  </label>
       <input
         type="text"
-        id="nombre"
-        name="nombre"
-        value={formData.nombre}
+        id="Nombre"
+        name="Nombre"
+        value={formData.Nombre}
         onChange={handleInputChange}
       />
     </div>
@@ -65,7 +65,7 @@ function WaiterForm() {
         onChange={handleInputChange}
       />
     </div>
-    <button className="submit-button" type="submit">Enviar</button>
+    <button className="submit_button" type="submit">Enviar</button>
   </form>
 </div>
     </div>

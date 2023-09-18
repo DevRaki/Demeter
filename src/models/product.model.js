@@ -21,7 +21,7 @@ export const product = sequelize.define('PRODUCTOS', {
     Imagen: {
         type: DataTypes.BLOB,
         allowNull: false,
-        unique: true
+        unique: false
     }
 });
 

@@ -64,3 +64,16 @@ export const updateWaiter = async(req, res) =>{
 
     }
 }
+
+export const GetWaiter = async(req, res) =>{
+    const {id} = req.params;
+    try {
+        const Waiter = await waiter.findByPk(id)
+        res.json(Waiter.Nombre)
+        
+
+    } catch (error) {
+    return res.status(500).json({message : error.message})
+
+    }
+}
