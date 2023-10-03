@@ -7,12 +7,12 @@ import Sale_detail from './pages/sale_detai'
 import SaleForm from './pages/sub_Csale/saleForm.jsx'
 import SaleCreation from './pages/sub_Csale/saleCreation'
 import WaiterForm from './pages/waiters/create_waiter'
-import Sidebar from './pages/temporal/Sidebar'
+import Menu from './pages/components/Menu.jsx';
 
 function App() {
   return (
     <BrowserRouter>
-     <Sidebar />
+     <Menu />
       <Routes>
         <Route path='/' element={ <h1 class='bg-blue-500'>Informe</h1> } />
         <Route path='/user' element={<h1>Usuarios</h1>} />

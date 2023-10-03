@@ -1,13 +1,4 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-body{
-    background-color: rgb(190, 193, 193);
-}
-
 .left-section{
     display: flex;
     background-color: rgb(39, 4, 114);

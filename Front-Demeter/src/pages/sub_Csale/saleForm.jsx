@@ -29,6 +29,19 @@ function SaleForm() {
     updateFormData();
   };
 
+  const handleInputChange2 = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+    console.log(formValues)
+
+    setFormValues({
+      ...formValues,
+      [name]: newValue,
+    });
+    updateFormData();
+    window.location.href = "/sales"
+  };
+
   const updateFormData = async () => {
     await axios.put(`http://localhost:5000/salesParams/${intID_VENTA}`, formValues)
       .then(response => {
@@ -73,7 +86,7 @@ function SaleForm() {
           />
          <button
             type="button"
-            onClick={handleInputChange}
+            onClick={handleInputChange2}
             className="custom_button"
           >
             Guardar

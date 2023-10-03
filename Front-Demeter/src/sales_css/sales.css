@@ -1,25 +1,30 @@
 
-
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     flex-direction: column;
     background-color: #ffff;
     font-family: 'Poppins', sans-serif;
 }
+.Sales{
+    float: right;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 90%;
+    height: 100%;
+}
 
 .sale_table{
-    margin-top: 10%;
-    margin-left: 12%;
+    margin-top: 5%;
+    margin-left: 15%;
     min-width: 70vw;
 }
 
 .table_sales{
     border-radius: 10px;
     min-width: 70vw;
-    margin-top: 20%;
+    margin-top: 12%;
 }
 
 .table_sales td, .table_detail td{

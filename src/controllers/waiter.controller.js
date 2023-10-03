@@ -77,3 +77,16 @@ export const GetWaiter = async(req, res) =>{
 
     }
 }
+
+
+export const GetWaiters = async(req, res) =>{
+    try {
+        const Waiter = await waiter.findAll()
+        res.json(Waiter)
+        
+
+    } catch (error) {
+    return res.status(500).json({message : error.message})
+
+    }
+}
