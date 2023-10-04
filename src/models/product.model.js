@@ -20,7 +20,7 @@ export const product = sequelize.define('PRODUCTOS', {
     },
     Imagen: {
         type: DataTypes.BLOB,
-        allowNull: false,
+        allowNull: true,
         unique: false
     }
 });
