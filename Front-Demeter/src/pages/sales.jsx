@@ -114,10 +114,8 @@
                   Venta_Rapida: 1,
                   Descuento: 0.0
               });
-              console.log("gols")
               const { ID_VENTA } = response.data;
               window.location.href = `http://localhost:5173/sale_creation/${ID_VENTA}`;
-              console.log(formValues);
           } catch (error) {
               console.log(error);
           }

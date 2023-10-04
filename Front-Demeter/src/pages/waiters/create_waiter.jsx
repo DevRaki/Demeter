@@ -33,13 +33,7 @@ function WaiterForm() {
 
   return (
     <div className="waiter-form-container">
-        <div className="back">
-           <Link to="/sales">
-           <button className="back-button">
-                 &#8592; Regresar
-            </button>
-            </Link>
-           </div>
+       
       <div className='Title'>
         <h1 className='sale-Title'>Registro de meseros</h1>
       </div>
@@ -65,7 +59,7 @@ function WaiterForm() {
         onChange={handleInputChange}
       />
     </div>
-    <button className="submit_button" type="submit">Enviar</button>
+    <button className="botonunu" type="submit">Enviar</button>
   </form>
 </div>
     </div>

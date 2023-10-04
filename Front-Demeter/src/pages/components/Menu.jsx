@@ -7,7 +7,7 @@ import ventas from '../img/ventas.png'
 import informes from '../img/informes.png'
 import configuracion from '../img/configuracion.png'
 import usuario from '../img/user.png'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import { Link } from 'react-router-dom';
 
 const Menu = () => {
@@ -18,7 +18,7 @@ const Menu = () => {
     <div className="bg-white flex">
       <div className="w-64 bg-[#201E1E] min-h-screen flex flex-col justify-start items-start p-3">
         <Link to="/">
-          <img src={logo} alt="Logo" className="w-32 h-20 ml-8 mt-8" />
+          <img src={logo} alt="Logo" className="w-15 h-14 ml-8 mt-8" />
         </Link>
         <ul className="mt-8 space-y-6">
           {[  
@@ -40,11 +40,8 @@ const Menu = () => {
                 className="flex items-center text-white hover:bg-gray-700 p-2 rounded ml-7"
                 onClick={() => item.submenu && index === 0 ? setOpenInsumos(!openInsumos) : setOpenCompras(!openCompras)}
               >
-                <img src={item.icon} alt={item.text} className="w-8 h-6" />
+                <img src={item.icon} alt={item.text} className="w-8 h-8" />
                 <span className="ml-2">{item.text}</span>
-                {item.submenu && (
-                  <KeyboardArrowDownIcon className="ml-2 text-white" />
-                )}
               </a>
               {index === 0 ? (
                 openInsumos && item.submenu && (
@@ -76,10 +73,10 @@ const Menu = () => {
         </ul>
         <div className="mt-auto flex justify-end space-x-4 mr-4 w-full">
           <a href="#" className="text-white hover:text-gray-400">
-            <img src={configuracion} alt="Configuración" className="w-9 h-6" />
+            <img src={configuracion} alt="Configuración" className="w-9 h-9 " />
           </a>
           <a href="#" className="text-white hover:text-gray-400">
-            <img src={usuario} alt="Usuario" className="w-8 h-6" />
+            <img src={usuario} alt="Usuario" className="w-8 h-8" />
           </a>
         </div>
       </div>

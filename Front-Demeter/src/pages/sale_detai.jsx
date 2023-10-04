@@ -14,14 +14,13 @@ function Sale_detail(updateTrigger ) {
             setList_Sales(response.data)
         })
     }, [updateTrigger])
-
+    
     function getSale() {
         List_Sales.map((value, key) => (
             total += value.SubTotal
         ))
         return List_Sales.map((value, key) => (
             <tr> 
-                <td scope="row">{value.ID_DETALLE_VENTA}</td> 
                 <td scope="row">{value.ID_PRODUCTO}</td> 
                 <td scope="row">{value.Cantidad}</td> 
                 <td scope='row'>{value.SubTotal}</td>    
