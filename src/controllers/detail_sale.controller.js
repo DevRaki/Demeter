@@ -44,4 +44,40 @@ export const getDetailWSale = async (req, res) => {
     }})
     res.json(Data)
 }
- 
+export const updateDetail_ADD = async(req, res) => {
+    try {
+    const {id} = req.params 
+    const detail = await detail_sale.findByPk(id)
+    const producto = await product.findByPk(detail.ID_PRODUCTO)
+    const Cantidad = detail.Cantidad+1
+    const SubTotal = Cantidad * producto.Precio
+    
+    await detail.update({
+        Cantidad : Cantidad,
+        SubTotal : SubTotal
+    })
+
+    res.json(detail)
+    } catch (error) { 
+        return res.status(500).json({ message: error.message });
+    }
+}
+
+export const updateDetail_SUBSTRACT = async(req, res) => {
+    try {
+    const {id} = req.params 
+    const detail = await detail_sale.findByPk(id)
+    const producto = await product.findByPk(detail.ID_PRODUCTO)
+    const Cantidad = detail.Cantidad-1
+    const SubTotal = Cantidad * producto.Precio
+    
+    await detail.update({
+        Cantidad : Cantidad,
+        SubTotal : SubTotal
+    })
+
+    res.json(detail)
+    } catch (error) { 
+        return res.status(500).json({ message: error.message });
+    }
+}

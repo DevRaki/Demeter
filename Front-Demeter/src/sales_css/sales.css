@@ -15,6 +15,15 @@ body{
     height: 100%;
 }
 
+.details{
+
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    width: 90%;
+    height: 100%;
+}
+
 
 .sale_table{
     margin-top: 5%;
@@ -173,4 +182,17 @@ body{
     border-radius: 10px;
     min-width: 30vw;
     margin-left: 10%;
+}
+
+.add_cuantity{
+    color: red;
+    padding-right: 10%;
+    font-size: 20px;
+}
+
+
+.subtract_cuantity{
+    color: rgb(79, 131, 0);
+    padding-left: 8%;
+    font-size: 20px;
 }

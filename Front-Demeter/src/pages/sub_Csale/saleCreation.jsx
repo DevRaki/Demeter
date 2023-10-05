@@ -1,5 +1,5 @@
 
-import Sale_detail from '../sale_detai';
+import Sale_detail_creation from '../sale_detail_creation';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -70,7 +70,7 @@ function getProduct() {
 
       <div className="left-side">
           <div className="detail_table">
-            <Sale_detail  updateTrigger={updateTrigger} />
+            <Sale_detail_creation  updateTrigger={updateTrigger} />
           </div>
       </div>
       <div className="rigth-side"> 
