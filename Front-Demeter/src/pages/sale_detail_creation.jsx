@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
-import '../sales_css/sales.css';  
+import '../sales_css/sales.css'; 
 
 function Sale_detail_creation({ updateTrigger }) {
   const { id } = useParams();
@@ -44,6 +44,28 @@ function Sale_detail_creation({ updateTrigger }) {
     }
   };
 
+  function getSale() {
+    return listSales.map((value, key) => (
+      <tr key={key}>
+        <td scope="row">{value.ID_PRODUCTO}</td>
+        <td scope="row">
+          <button
+            className="add_cuantity"
+            onClick={() => handleSubtract(value.ID_DETALLE_VENTA)}
+            disabled={value.Cantidad === 1} 
+          >
+            <AiOutlineMinusCircle />
+          </button>
+          {value.Cantidad}
+          <button className="subtract_cuantity" onClick={() => handleAdd(value.ID_DETALLE_VENTA)}>
+            <AiOutlinePlusCircle />
+          </button>
+        </td>
+        <td scope="row">{value.SubTotal}</td>
+      </tr>
+    ));
+  }
+
   const calculateTotal = () => {
     let sum = 0;
     listSales.forEach((value) => {
@@ -65,7 +87,11 @@ function Sale_detail_creation({ updateTrigger }) {
 
   return (
     <div className="details_creation">
-        
+      <div className="back">
+        <Link to="/sales">
+          <button className="back-button">&#8592; Regresar</button>
+        </Link>
+      </div>
       <div className="Title_detail">
         <h1 className="sale-Title-Detail">Venta Numero {id}</h1>
       </div>
@@ -82,7 +108,11 @@ function Sale_detail_creation({ updateTrigger }) {
             <tr key={key}>
               <td scope="row">{value.ID_PRODUCTO}</td>
               <td scope="row">
-                <button className="add_cuantity" onClick={() => handleSubtract(value.ID_DETALLE_VENTA)}>
+                <button
+                  className="add_cuantity"
+                  onClick={() => handleSubtract(value.ID_DETALLE_VENTA)}
+                  disabled={value.Cantidad === 1} 
+                >
                   <AiOutlineMinusCircle />
                 </button>
                 {value.Cantidad}
@@ -95,7 +125,7 @@ function Sale_detail_creation({ updateTrigger }) {
           ))}
         </tbody>
       </table>
-      <div className="pagination text-center mt-4 mx-100 ml-100">
+      <div className="pagination text-center mt-4 mx-auto ml-auto ">
         <div className="pagination_c">
           {pageNumbers.map((number) => (
             <button

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './FormSale.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
 
 
 function SaleForm() {
@@ -29,10 +28,10 @@ function SaleForm() {
     updateFormData();
   };
 
-  const handleInputChange2 = (e) => {
+  const handleInputChange2 = async (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
-    console.log(formValues)
+    await axios.put(`http://localhost:5000/sales/${intID_VENTA}`)
 
     setFormValues({
       ...formValues,
